@@ -1,0 +1,273 @@
+1.
+*public class Employee {
+	int Empid;
+	String Empname;
+	double Empsal;
+	
+	public Employee() {}
+	
+	public Employee(int empid, String empname, double empsal) {
+		Empid = empid;
+		Empname = empname;
+		Empsal = empsal;
+	}
+
+}
+
+
+*public interface Employeeinterface {
+  
+	public double salcal(double Ta, double HRA, double DA);
+	
+	public void display();
+}
+
+*public class Manager extends Employee implements Employeeinterface{
+	
+	@Override
+	public double salcal(double TA, double HRA, double DA) {
+		return this.Empsal+TA+HRA+DA;
+	}
+	public void display() {
+		System.out.println(Empid);
+		System.out.println(Empname);
+		System.out.println(Empsal);
+	}
+public static void main(String args []) {
+	Manager m1= new Manager();
+	m1.Empid=5678;
+	m1.Empname="deva";
+	m1.Empsal=10000;
+	m1.display();
+	
+	System.out.println(m1.salcal(200, 2000, 500));
+}
+}
+
+*public class Developer extends Employee implements Employeeinterface{
+	@Override
+	public double salcal(double TA, double HRA, double DA) {
+		return this.Empsal+TA+HRA+DA;
+	}
+	public void display() {
+		System.out.println(Empid);
+		System.out.println(Empname);
+		System.out.println(Empsal);
+	}
+public static void main(String args []) {
+	Developer m1= new Developer();
+	m1.Empid=7777;
+	m1.Empname="lucky";
+	m1.Empsal=12000;
+	m1.display();
+	
+	System.out.println(m1.salcal(300, 2000, 700));
+}
+}
+
+
+*public class Tester extends Employee implements Employeeinterface{
+	@Override
+	public double salcal(double TA, double HRA, double DA) {
+		return this.Empsal+TA+HRA+DA;
+	}
+	public void display() {
+		System.out.println(Empid);
+		System.out.println(Empname);
+		System.out.println(Empsal);
+	}
+public static void main(String args []) {
+	Tester t1= new Tester();
+	t1.Empid=5678;
+	t1.Empname="deva";
+	t1.Empsal=10000;
+	t1.display();
+	
+	System.out.println(t1.salcal(400, 3000, 900));
+}
+}
+
+
+
+2.
+public class Shape {
+	float Length;
+	float Width;
+	float Height;
+	
+	public Shape() { }
+		
+		public Shape(float length, float width, float height) {
+			this.Length=length;
+			this.Width=width;
+			this.Height=height;
+			
+		}
+
+		public float area(float length, float width, float height) {
+			return 0;
+		}
+	}
+
+
+*public interface Shapeinterface {
+	
+	public default float area(float length, float width, float height) {
+		return 0;
+	}
+
+}
+
+*public class Square extends Shape implements Shapeinterface{
+
+	Square(){};
+	
+	@Override
+	public float area(float length,float width,float height) {
+		return length*length;
+	}
+
+	public static void main(String args[]) {
+		Square s1=new Square();
+		System.out.println( "Area of Square is:"+ s1.area(20, 0, 0));
+	}
+
+}
+
+
+*public class Triangle extends Shape implements  Shapeinterface {
+
+Triangle(){};
+	
+	@Override
+	public float area(float length,float width,float height) {
+		return ((length*height)/2);
+	}
+
+	public static void main(String args[]) {
+		Triangle t1=new Triangle();
+		System.out.println( "Area of Triangle  is:"+ t1.area(20, 30, 40));
+	}
+
+}
+
+*public class Rectangle extends Shape implements Shapeinterface{
+	
+	Rectangle(){};
+	
+	@Override
+	public float area(float length,float width,float height) {
+		return length*width;
+	}
+
+	public static void main(String args[]) {
+		Rectangle r1=new Rectangle();
+		System.out.println( "Area of Rectangle is:"+ r1.area(10, 20, 0));
+	}
+}
+
+3.
+public class Customexception extends Exception {
+
+	public Customexception(String str) {
+		super(str);
+	}
+
+ public static void main(String[] args) throws Customexception {
+	int salary = 20000;
+	if(salary<10000)
+		throw new Customexception("salary is lessthan 10000");
+	else
+		System.out.println("salary is greater than 10000");
+}
+}
+
+4.public  abstract class Employe {
+	long employeeid;
+	String employeeName;
+	Address address;
+	double basicpay;
+	
+	 abstract double calculatesalary();
+
+}
+
+
+*public class Address {
+	String doorno;
+	String Street;
+	String city;
+	int pincode;
+	public Address(String doorno, String street, String city, int pincode) {
+		super();
+		this.doorno = doorno;
+		Street = street;
+		this.city = city;
+		this.pincode = pincode;
+	}
+	public Address(String string) {
+	
+	}
+	
+
+}
+
+*public class TechnicalEmployee extends Employe {
+		String technicalskills;
+		 double Salary;
+
+		@Override
+		double calculatesalary() {
+			// TODO Auto-generated method stub
+			this.Salary=this.basicpay+(this.basicpay*0.12);
+			return this.Salary;
+		}
+
+		public TechnicalEmployee(String technicalskills, double salary) {
+			super();
+			this.technicalskills = technicalskills;
+			Salary = salary;
+		}
+
+		@Override
+		public String toString() {
+			return "TechnicalEmployee [technicalskills=" + technicalskills + ", Salary=" + Salary + "]";
+		}
+}
+
+*public class Staff extends Employe {
+	String title;
+	double salary;
+
+	@Override
+	double calculatesalary() {
+		this.salary=this.salary+(this.salary*0.18);
+		return this.salary;
+	}
+
+	public Staff(String title, double salary) {
+		super();
+		this.title = title;
+		this.salary = salary;
+	}
+
+	@Override
+	public String toString() {
+		return "Staff [title=" + title + ", salary=" + salary + "]";
+	}
+}	
+	
+*public class UsingPeople {
+	public static void main (String [] args) {
+		TechnicalEmployee technicalemployee=new TechnicalEmployee("java",2000);
+		Address address=new Address("10-1-A","Astreet","gova",123);
+		System.out.println(technicalemployee);
+		System.out.println("salary is:"+technicalemployee.calculatesalary());
+		Staff staff=new Staff("manager",300000);
+		System.out.println(staff);
+		System.out.println("salary is:"+staff.calculatesalary());
+		
+	}
+
+}
+
