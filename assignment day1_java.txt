@@ -1,0 +1,195 @@
+1q.
+
+package Assignment1java;
+
+public class Greatestnum1 {
+	public static void main(String[] args)   
+	{   
+	int a=12, b=25, c=89;  
+	if(a>=b && a>=c)  //comparing a
+	System.out.println(a+" is the greatest Number");  
+	else if (b>=a && b>=c)  //comparing b
+	System.out.println(b+" is the greatest Number");  
+	else                    //else
+	System.out.println(c+" is the greatest number");  //output
+	}  
+	}
+
+
+2q.
+
+package Assignment1java;
+
+public class Naturalnum1 {public static void main(String[] args)
+{     
+int i;
+System.out.println ("The first 10 natural numbers are:\n");
+for (i=1;i<=10;i++) // initialization
+{      
+	System.out.println (i);
+}
+System.out.println ("\n");
+}
+}
+
+3q.
+
+package Assignment1java;
+
+public class Cube {
+	public static void main(String arg[]) {
+		int i=2;{
+			System.out.println(i*i*i); //cube
+		}
+
+}
+}
+
+4q.
+
+package Assignment1java;
+
+public class Arraysum {
+       public static void main(String[] args) {      
+		int arr[] = {5, 9, 3, 4, 5, 6, 7};
+		int sum = 0;
+
+		for (int i : arr)
+		    sum += i;
+		System.out.println("The sum is " + sum);
+		}
+		}
+
+5q.
+
+package Assignment1java;
+
+public class Specificvalue {
+	public static void main(String arg[]) {
+		int arr[]=new int[] {12,2,4,9,3,7};
+		int second=7;
+		for(int i=0; i<arr.length; i++) {
+			if(second==arr[i])
+			{
+				System.out.println("search element is found:"+arr[i]);
+			}
+		}
+	}
+}
+
+6q.
+
+package Assignment1java;
+
+public class Array_reverse {
+	public static void main(String[] args) {
+		int[] array = { 1, 2, 3, 4, 5, 6, 7 }; //Initialize array 
+
+		reverse(array);
+
+		}
+
+		public static void reverse(int[] arr) {
+
+		for (int i = arr.length - 1; i >= 0; i--) {
+		System.out.println(arr[i]);
+		}
+		}
+}
+
+7q.
+
+package Assignment1java;
+
+public class Replace {
+	public static void main(String[] args) 
+	   {
+	      String s= "this is java world";
+	      s=s.replaceAll("A","\\s");
+	      s=s.replaceAll("E","\\s");
+	      s=s.replaceAll("I","\\s");
+	      s=s.replaceAll("O","\\s");
+	      s=s.replaceAll("U","\\s");
+	      s=s.replaceAll("a","\\s");
+	      s=s.replaceAll("e","\\s");
+	      s=s.replaceAll("i","\\s");
+	      s=s.replaceAll("o","\\s");
+	      s=s.replaceAll("u","\\s");
+	      System.out.println(s);
+	      
+	   } 
+
+	}
+
+8q.
+
+package Assignment1java;
+
+public class Array_duplicate {
+ 
+		public static void main(String[] args) {  
+		        //Initialize array  
+		        int [] arr = new int [] {1, 2, 3, 4, 2, 7, 8, 8, 3};  
+		        System.out.println("Duplicate elements in given array: ");  
+		        //Searches for duplicate element  
+		        for(int i = 0; i < arr.length; i++) {  
+		            for(int j = i + 1; j < arr.length; j++) {  
+		                if(arr[i] == arr[j])  
+		                    System.out.println(arr[j]);  
+		            }  
+		        }  
+		    }  
+		}  
+
+
+9q.
+
+package Assignment1java;
+
+public class High_count_arr {
+	public static void main(String arg[]) {
+		int count=0;
+		int num[] = {1,2,3,4,3,5,7,8,5};
+		for(int i=0; i<num.length; i++)
+		{
+			for(int j=i+1; j<num.length; j++)
+			{
+				if (num[i]==num[j])
+				{
+					count++;
+					break;
+				}
+			  }
+			}
+			System.out.println("count duplicate numberis:"+count);
+	}
+
+	}
+
+10q.
+
+package Assignment1java;
+
+public class Two_lar_arrat {
+	public static void main(String arg[]) {
+		int[] arrValues = {5,8,12,65,3};
+		int largestNum1 = 0;
+		int largestNum2 = 0;
+		
+		for(int i=0; i<arrValues.length; i++) {
+			if(largestNum1 <arrValues[i]) {
+				largestNum2 = largestNum1;
+				largestNum1 = arrValues[i];
+				
+			}else if (largestNum2 < arrValues[i]) {
+				largestNum2 = arrValues[i];
+			}
+		
+		}
+		System.out.println("First Largest Number:" +largestNum1);
+		System.out.println("Second Largest Number:" +largestNum2);
+		
+	}
+		
+}
+	   		
